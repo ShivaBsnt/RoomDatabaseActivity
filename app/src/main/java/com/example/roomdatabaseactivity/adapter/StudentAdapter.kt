@@ -131,36 +131,36 @@ class StudentAdapter(
         inputUsername.setText(lstStudent[position].studentName)
         inputAddress.setText(lstStudent[position].studentAddress)
         inputAge.setText(lstStudent[position].studentAge)
-//        val yesBtn = dialog.findViewById(R.id.btnUpdate) as Button
-//        val noBtn = dialog.findViewById(R.id.btnCancel) as Button
-//        yesBtn.setOnClickListener {
-//            StudentData.studentList[position].studentName = inputUsername.text.toString()
-//            StudentData.studentList[position].studentAddress = inputAddress.text.toString()
-//            StudentData.studentList[position].studentAge = inputAge.text.toString()
-//            var gender = ""
-//            var image=""
-//            when (groupradio.checkedRadioButtonId) {
-//                R.id.rbMale -> gender = "Male"
-//                R.id.rbFemale -> gender= "Female"
-//                R.id.rbOther -> gender = "Other"
-//            }
-//            if (gender == "Male") {
-//                image = "https://digiimento.com/wp-content/uploads/2015/11/avatar-male-200x200.png"
-//            }
-//            if (gender == "Female") {
-//                image =
-//                    "https://avatarmaker.net/images/8.png"
-//            }
-//            if (gender == "Other") {
-//                image = "https://img.icons8.com/cotton/2x/gender.png"
-//            }
-//            StudentData.studentList[position].studentGender = gender
-//            StudentData.studentList[position].studentImage = image
-//
-//            notifyDataSetChanged()
-//            dialog.dismiss()
-//        }
-//        noBtn.setOnClickListener { dialog.dismiss() }
+        val yesBtn = dialog.findViewById(R.id.btnUpdate) as Button
+        val noBtn = dialog.findViewById(R.id.btnCancel) as Button
+        yesBtn.setOnClickListener {
+            StudentData.studentList[position].studentName = inputUsername.text.toString()
+            StudentData.studentList[position].studentAddress = inputAddress.text.toString()
+            StudentData.studentList[position].studentAge = inputAge.text.toString()
+            var gender = ""
+            var image=""
+            when (groupradio.checkedRadioButtonId) {
+                R.id.rbMale -> gender = "Male"
+                R.id.rbFemale -> gender= "Female"
+                R.id.rbOther -> gender = "Other"
+            }
+            if (gender == "Male") {
+                image = "https://digiimento.com/wp-content/uploads/2015/11/avatar-male-200x200.png"
+            }
+            if (gender == "Female") {
+                image =
+                    "https://avatarmaker.net/images/8.png"
+            }
+            if (gender == "Other") {
+                image = "https://img.icons8.com/cotton/2x/gender.png"
+            }
+            StudentData.studentList[position].studentGender = gender
+            StudentData.studentList[position].studentImage = image
+
+            notifyDataSetChanged()
+            dialog.dismiss()
+        }
+        noBtn.setOnClickListener { dialog.dismiss() }
 
         dialog.show()
 
