@@ -5,13 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:orientation="vertical"
 android:background="@drawable/splashscreen_gradient"
     tools:context=".SplashActivity">
-    <ImageView
-        android:layout_gravity="center_vertical"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/splash"/>
+    <ImageView
+        android:layout_width="195dp"
+
+        android:layout_height="165dp"
+
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/splash" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:text="SPLASH SCREEN"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
