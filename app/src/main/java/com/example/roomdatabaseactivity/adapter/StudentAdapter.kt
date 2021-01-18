@@ -71,7 +71,7 @@ class StudentAdapter(
         holder.imgEdit.setOnClickListener() {
 
 
-//            showDialog(position)
+            showDialog(position)
         }
         holder.imgDelete.setOnClickListener(){
 
@@ -105,6 +105,65 @@ class StudentAdapter(
         Glide.with(context)
             .load(std.studentImage)
             .into(holder.imgProfile)
+    }
+
+    private fun showDialog(position: Int) {
+        val dialog = Dialog(context,R.style.ThemeOverlay_AppCompat_Dialog_Alert)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(true)
+        dialog.setContentView(R.layout.activity_form)
+        dialog.setTitle("Hello")
+//        val body = dialog.findViewById(R.id.body) as TextView
+//        body.text = title
+        val inputUsername = dialog.findViewById(R.id.inputUsername) as EditText
+        val inputAddress = dialog.findViewById(R.id.inputAddress) as EditText
+        val inputAge = dialog.findViewById(R.id.inputAge) as EditText
+        val groupradio = dialog.findViewById(R.id.groupradio) as RadioGroup
+        val gender = lstStudent[position].studentGender
+        when(gender)
+        {
+            "Male" -> groupradio.check(R.id.rbMale)
+            "Female" -> groupradio.check(R.id.rbFemale)
+            "Other" -> groupradio.check(R.id.rbOther)
+        }
+
+
+        inputUsername.setText(lstStudent[position].studentName)
+        inputAddress.setText(lstStudent[position].studentAddress)
+        inputAge.setText(lstStudent[position].studentAge)
+//        val yesBtn = dialog.findViewById(R.id.btnUpdate) as Button
+//        val noBtn = dialog.findViewById(R.id.btnCancel) as Button
+//        yesBtn.setOnClickListener {
+//            StudentData.studentList[position].studentName = inputUsername.text.toString()
+//            StudentData.studentList[position].studentAddress = inputAddress.text.toString()
+//            StudentData.studentList[position].studentAge = inputAge.text.toString()
+//            var gender = ""
+//            var image=""
+//            when (groupradio.checkedRadioButtonId) {
+//                R.id.rbMale -> gender = "Male"
+//                R.id.rbFemale -> gender= "Female"
+//                R.id.rbOther -> gender = "Other"
+//            }
+//            if (gender == "Male") {
+//                image = "https://digiimento.com/wp-content/uploads/2015/11/avatar-male-200x200.png"
+//            }
+//            if (gender == "Female") {
+//                image =
+//                    "https://avatarmaker.net/images/8.png"
+//            }
+//            if (gender == "Other") {
+//                image = "https://img.icons8.com/cotton/2x/gender.png"
+//            }
+//            StudentData.studentList[position].studentGender = gender
+//            StudentData.studentList[position].studentImage = image
+//
+//            notifyDataSetChanged()
+//            dialog.dismiss()
+//        }
+//        noBtn.setOnClickListener { dialog.dismiss() }
+
+        dialog.show()
+
     }
 
 //    private fun showDialog(position: Int) {
