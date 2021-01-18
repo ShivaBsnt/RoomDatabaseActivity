@@ -111,7 +111,7 @@ class StudentAdapter(
         val dialog = Dialog(context,R.style.ThemeOverlay_AppCompat_Dialog_Alert)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(true)
-        dialog.setContentView(R.layout.activity_form)
+        dialog.setContentView(R.layout.edit_details_form)
         dialog.setTitle("Hello")
 //        val body = dialog.findViewById(R.id.body) as TextView
 //        body.text = title
